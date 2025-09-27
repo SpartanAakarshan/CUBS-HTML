@@ -1,0 +1,1086 @@
+.footer-bottom {
+    text-align: center;
+    padding-top: 4<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUBS - UNLEASH THE BEAST</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    line-height: 1.4;
+    overflow-x: hidden;
+    background: #000000;
+    color: #ffffff;
+    cursor: crosshair;
+}
+
+/* Energetic Background Effects */
+.energy-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, #FFD700 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, #FFA500 0%, transparent 50%),
+        radial-gradient(circle at 40% 90%, #FFD700 0%, transparent 50%);
+    opacity: 0.03;
+    z-index: -2;
+    animation: energyPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes energyPulse {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.03; }
+    100% { transform: scale(1.1) rotate(5deg); opacity: 0.06; }
+}
+
+/* Lightning Effect */
+.lightning {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(to bottom, #FFD700, transparent);
+    opacity: 0;
+    animation: lightning 3s infinite;
+}
+
+.lightning:nth-child(1) { left: 10%; animation-delay: 0s; }
+.lightning:nth-child(2) { left: 30%; animation-delay: 1s; }
+.lightning:nth-child(3) { right: 20%; animation-delay: 2s; }
+.lightning:nth-child(4) { right: 40%; animation-delay: 0.5s; }
+
+@keyframes lightning {
+    0%, 90%, 100% { opacity: 0; transform: scaleY(0); }
+    5%, 10% { opacity: 1; transform: scaleY(1); }
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(90deg, #000000 0%, #1a1a00 50%, #000000 100%);
+    border-bottom: 3px solid #FFD700;
+    padding: 1rem 3rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 30px rgba(255, 215, 0, 0.3);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #FFD700;
+    text-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
+    letter-spacing: 2px;
+    transform: skew(-10deg);
+    animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+    0% { text-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700; }
+    100% { text-shadow: 0 0 30px #FFD700, 0 0 60px #FFD700, 0 0 80px #FFA500; }
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+    transform: scale(1.1) skew(-5deg);
+    text-shadow: 0 0 10px #FFD700;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000000;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 0;
+    font-weight: 900;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: skew(-10deg);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.cta-button:hover {
+    transform: skew(-10deg) scale(1.05) translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.8);
+    background: linear-gradient(45deg, #FFA500, #FFD700);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: 
+        linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="scratch" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0,10 Q5,0 10,10 T20,10" stroke="%23ffff00" stroke-width="0.5" fill="none" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23scratch)"/></svg>');
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(255,255,0,0.1) 0%, transparent 70%);
+    animation: heroGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+    0% { opacity: 0.1; }
+    100% { opacity: 0.3; }
+}
+
+.hero-effects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.scratch-effect {
+    position: absolute;
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ffff00, transparent);
+    transform: rotate(45deg);
+    opacity: 0.3;
+    animation: scratch 6s linear infinite;
+}
+
+.scratch-1 { top: 20%; left: 10%; animation-delay: 0s; }
+.scratch-2 { top: 60%; right: 15%; animation-delay: 2s; transform: rotate(-45deg); }
+.scratch-3 { bottom: 30%; left: 60%; animation-delay: 4s; }
+
+@keyframes scratch {
+    0% { transform: translateX(-300px) rotate(45deg); opacity: 0; }
+    50% { opacity: 0.6; }
+    100% { transform: translateX(300px) rotate(45deg); opacity: 0; }
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 1200px;
+    z-index: 10;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 8rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    color: #FFD700;
+    text-shadow: 
+        0 0 20px #FFD700,
+        0 0 40px #FFD700,
+        0 0 60px #FFA500,
+        5px 5px 0 #000000;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    animation: titleShock 4s ease-in-out infinite;
+    transform: perspective(500px) rotateX(10deg);
+}
+
+@keyframes titleShock {
+    0%, 100% { 
+        transform: perspective(500px) rotateX(10deg) scale(1);
+        text-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 60px #FFA500, 3px 3px 0 #000000;
+    }
+    50% { 
+        transform: perspective(500px) rotateX(10deg) scale(1.02);
+        text-shadow: 0 0 30px #FFD700, 0 0 60px #FFD700, 0 0 90px #FFA500, 3px 3px 0 #000000;
+    }
+}
+
+.hero-subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 6px #000000;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 1.8rem 3.5rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000000;
+    transform: skew(-10deg);
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+}
+
+.primary-btn:hover {
+    transform: skew(-10deg) scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.8);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: #FFD700;
+    border: 3px solid #FFD700;
+    transform: skew(-10deg);
+}
+
+.secondary-btn:hover {
+    background: #FFD700;
+    color: #000000;
+    transform: skew(-10deg) scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+}
+
+/* Sports Section */
+.sports-section {
+    padding: 10rem 3rem;
+    background: 
+        linear-gradient(135deg, #000000 0%, #0a0a00 50%, #000000 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="energy" width="50" height="50" patternUnits="userSpaceOnUse"><polygon points="25,5 30,20 45,20 35,30 40,45 25,35 10,45 15,30 5,20 20,20" fill="%23ffff00" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23energy)"/></svg>');
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 5rem;
+    color: #FFD700;
+    text-shadow: 
+        0 0 20px #FFD700,
+        0 0 40px #FFA500,
+        4px 4px 0 #000000;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transform: perspective(300px) rotateX(15deg);
+}
+
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 4rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.sport-card {
+    background: 
+        linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,165,0,0.05) 100%),
+        linear-gradient(45deg, #000000 0%, #111100 100%);
+    border: 2px solid #FFD700;
+    padding: 3rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transform: skew(-2deg);
+}
+
+.sport-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,215,0,0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s;
+    opacity: 0;
+}
+
+.sport-card:hover::before {
+    animation: energySwipe 0.6s ease-out;
+}
+
+@keyframes energySwipe {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+}
+
+.sport-card:hover {
+    transform: skew(-2deg) scale(1.05) translateY(-10px);
+    border-color: #FFA500;
+    box-shadow: 
+        0 20px 50px rgba(255, 215, 0, 0.3),
+        0 0 100px rgba(255, 165, 0, 0.2);
+}
+
+.sport-icon {
+    font-size: 6rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: drop-shadow(0 0 20px currentColor);
+}
+
+.cricket { color: #FFA500; }
+.chess { color: #FFD700; }
+.basketball { color: #FFD700; }
+
+.sport-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sport-description {
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.sport-button {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000000;
+    padding: 1rem 2rem;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: skew(-5deg);
+    font-size: 1.1rem;
+}
+
+.sport-button:hover {
+    transform: skew(-5deg) scale(1.1) translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6);
+}
+
+/* Opportunities Section */
+.opportunities {
+    padding: 10rem 3rem;
+    background: 
+        linear-gradient(45deg, #000000 0%, #001100 50%, #000000 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="bolt" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M15,5 L10,15 L20,15 L15,25 L20,15 L10,15 Z" fill="%23ffff00" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23bolt)"/></svg>');
+    position: relative;
+}
+
+.opportunities-content {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.opportunities-text h3 {
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+    color: #FFD700;
+    text-shadow: 
+        0 0 20px #FFD700,
+        0 0 40px #FFA500,
+        4px 4px 0 #000000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.opportunities-text p {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    font-weight: 600;
+}
+
+.feature-list {
+    list-style: none;
+    margin: 3rem 0;
+}
+
+.feature-list li {
+    padding: 1.5rem 0;
+    color: #ffffff;
+    position: relative;
+    padding-left: 4rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.feature-list li::before {
+    content: '⚡';
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-size: 2rem;
+    text-shadow: 0 0 15px #FFD700;
+}
+
+.opportunities-visual {
+    position: relative;
+    height: 500px;
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 0, 0.2) 0%, rgba(57, 255, 20, 0.1) 100%),
+        linear-gradient(45deg, #000000, #111100);
+    border: 3px solid #ffff00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform: skew(-3deg);
+}
+
+.opportunities-visual::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #ffff00 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.1;
+    transform: translate(-50%, -50%);
+    animation: energyPulse 3s ease-in-out infinite;
+}
+
+.visual-text {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+.visual-text h4 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #ffff00;
+    text-shadow: 0 0 20px #ffff00;
+    text-transform: uppercase;
+}
+
+.visual-text p {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Stats Section */
+.stats {
+    padding: 6rem 2rem;
+    background: 
+        linear-gradient(90deg, #000000 0%, #111100 50%, #000000 100%),
+        radial-gradient(circle at 50% 50%, rgba(255,255,0,0.1) 0%, transparent 70%);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,165,0,0.05));
+    border: 2px solid #FFD700;
+    transform: skew(-5deg);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: skew(-5deg) scale(1.1);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #FFD700;
+    text-shadow: 
+        0 0 20px #FFD700,
+        0 0 40px #FFA500,
+        2px 2px 0 #000000;
+    display: block;
+    text-transform: uppercase;
+}255, 0, 0.3);
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffff00;
+    text-shadow: 
+        0 0 20px #ffff00,
+        0 0 40px #39ff14,
+        2px 2px 0 #000000;
+    display: block;
+    text-transform: uppercase;
+}
+
+.stat-label {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+    background: #000000;
+    padding: 4rem 2rem 2rem;
+    border-top: 3px solid #ffff00;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.footer-section h4 {
+    color: #ffff00;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+.footer-section p, .footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 2;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.footer-section a:hover {
+    color: #ffff00;
+    text-shadow: 0 0 5px #ffff00;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 4rem;
+    margin-top: 4rem;
+    border-top: 2px solid #333;
+    color: #888;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 6rem;
+    }
+
+    .section-title {
+        font-size: 4.5rem;
+    }
+
+    .sports-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .sports-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .primary-btn, .secondary-btn {
+        padding: 1.2rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    .sport-card {
+        padding: 2rem;
+    }
+
+    .sport-icon {
+        font-size: 5rem;
+    }
+
+    .opportunities {
+        padding: 6rem 1.5rem;
+    }
+
+    .stats {
+        padding: 6rem 1.5rem;
+    }
+
+    .footer {
+        padding: 4rem 1.5rem 2rem;
+    }
+}
+</style>
+</head>
+<body>
+<div class="energy-bg"></div>
+
+<!-- Navigation -->
+<nav>
+<div class="nav-container">
+    <div class="logo">CUBS</div>
+    <ul class="nav-links">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#sports">SPORTS</a></li>
+        <li><a href="#events">EVENTS</a></li>
+        <li><a href="#opportunities">JOIN</a></li>
+        <li><a href="#about">ABOUT</a></li>
+    </ul>
+    <button class="cta-button">UNLEASH NOW</button>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="hero-effects">
+    <div class="scratch-effect scratch-1"></div>
+    <div class="scratch-effect scratch-2"></div>
+    <div class="scratch-effect scratch-3"></div>
+    <div class="lightning"></div>
+    <div class="lightning"></div>
+    <div class="lightning"></div>
+    <div class="lightning"></div>
+</div>
+
+<div class="hero-content">
+    <h1 class="hero-title">UNLEASH THE BEAST</h1>
+    <p class="hero-subtitle">DOMINATE • COMPETE • CONQUER</p>
+    
+    <div class="hero-buttons">
+        <button class="primary-btn">ENTER THE ARENA</button>
+        <button class="secondary-btn">JOIN THE CREW</button>
+    </div>
+</div>
+</section>
+
+<!-- Sports Section -->
+<section class="sports-section" id="sports">
+<h2 class="section-title">THREE BATTLEGROUNDS</h2>
+
+<div class="sports-grid">
+    <div class="sport-card">
+        <span class="sport-icon cricket">🏏</span>
+        <h3 class="sport-title">CRICKET</h3>
+        <p class="sport-description">SMASH. STRIKE. DOMINATE. Experience raw power cricket where legends are forged. From explosive T20 battles to championship warfare. Bring your A-game or go home.</p>
+        <button class="sport-button">ENTER BATTLE</button>
+    </div>
+    
+    <div class="sport-card">
+        <span class="sport-icon chess">♛</span>
+        <h3 class="sport-title">CHESS</h3>
+        <p class="sport-description">MIND WARFARE. TACTICAL DESTRUCTION. Outsmart, outplay, obliterate. Rapid-fire battles and strategic annihilation await. Only the mentally strongest survive.</p>
+        <button class="sport-button">DESTROY MINDS</button>
+    </div>
+    
+    <div class="sport-card">
+        <span class="sport-icon basketball">🏀</span>
+        <h3 class="sport-title">BASKETBALL</h3>
+        <p class="sport-description">FAST. FURIOUS. UNSTOPPABLE. High-octane court action where champions rise. Streetball intensity meets championship glory. Bring the heat.</p>
+        <button class="sport-button">OWN THE COURT</button>
+    </div>
+</div>
+</section>
+
+<!-- Opportunities Section -->
+<section class="opportunities" id="opportunities">
+<div class="opportunities-content">
+    <h2 class="section-title">MORE THAN ATHLETES</h2>
+    
+    <div class="opportunities-grid">
+        <div class="opportunities-text">
+            <h3>JOIN THE CREW</h3>
+            <p>Not competing? NO PROBLEM! UniSport Arena needs WARRIORS behind the scenes. Fuel the revolution and get your name in lights.</p>
+            
+            <ul class="feature-list">
+                <li><strong>MEDIA TEAM:</strong> Capture the carnage, create the buzz</li>
+                <li><strong>MARKETING:</strong> Spread the madness, build the hype</li>
+                <li><strong>ANALYTICS:</strong> Crunch numbers, predict victories</li>
+                <li><strong>EVENT CREW:</strong> Orchestrate chaos, manage mayhem</li>
+                <li><strong>DESIGN:</strong> Visual warfare, creative destruction</li>
+                <li><strong>JOURNALISM:</strong> Tell the stories, expose the heroes</li>
+            </ul>
+            
+            <p>GET FEATURED POSTS. BUILD YOUR EMPIRE. GAIN LEGENDARY STATUS.</p>
+            
+            <button class="primary-btn">JOIN THE REVOLUTION</button>
+        </div>
+        
+        <div class="opportunities-visual">
+            <div class="visual-text">
+                <h4>🔥 IGNITE YOUR PASSION</h4>
+                <p>FUEL THE FIRE</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+<div class="stats-grid">
+    <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <div class="stat-label">UNIVERSITIES</div>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">10K+</span>
+        <div class="stat-label">WARRIORS</div>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <div class="stat-label">BATTLES</div>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">24/7</span>
+        <div class="stat-label">DOMINATION</div>
+    </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="footer-content">
+    <div class="footer-section">
+        <h4>BATTLEGROUNDS</h4>
+        <a href="#cricket">CRICKET WARFARE</a><br>
+        <a href="#chess">CHESS DESTRUCTION</a><br>
+        <a href="#basketball">BASKETBALL MAYHEM</a>
+    </div>
+    <div class="footer-section">
+        <h4>JOIN THE CREW</h4>
+        <a href="#media">MEDIA SQUAD</a><br>
+        <a href="#marketing">HYPE MACHINE</a><br>
+        <a href="#events">EVENT WARRIORS</a>
+    </div>
+    <div class="footer-section">
+        <h4>CONNECT</h4>
+        <a href="#contact">CONTACT THE ARENA</a><br>
+        <a href="#social">SOCIAL WARFARE</a><br>
+        <a href="#news">BATTLE UPDATES</a>
+    </div>
+</div>
+
+<div class="footer-bottom">
+    <p>&copy; 2025 CUBS. UNLEASH YOUR POTENTIAL. DOMINATE THE COMPETITION.</p>
+</div>
+</footer>
+
+<script>
+// Add aggressive scrolling and explosive interactive effects
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Aggressive navigation effects on scroll
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.style.background = 'linear-gradient(90deg, #000000 0%, #222200 50%, #000000 100%)';
+            nav.style.boxShadow = '0 5px 40px rgba(255, 215, 0, 0.5)';
+        } else {
+            nav.style.background = 'linear-gradient(90deg, #000000 0%, #1a1a00 50%, #000000 100%)';
+            nav.style.boxShadow = '0 5px 30px rgba(255, 215, 0, 0.3)';
+        }
+    });
+
+    // Explosive stats animation on scroll
+    const observerOptions = {
+        threshold: 0.7
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const finalValue = stat.textContent;
+                    if (!finalValue.includes('+') && !finalValue.includes('/')) {
+                        animateNumberExplosive(stat, 0, parseInt(finalValue), 1500);
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(document.querySelector('.stats'));
+
+    function animateNumberExplosive(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            
+            // Add explosive easing
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const currentValue = Math.floor(easeOut * (end - start) + start);
+            
+            element.textContent = currentValue;
+            element.style.transform = `scale(${1 + (1 - progress) * 0.2})`;
+            
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            } else {
+                element.style.transform = 'scale(1)';
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Add explosive hover effects to cards
+    const cards = document.querySelectorAll('.sport-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'skew(-2deg) scale(1.08) translateY(-15px)';
+            this.style.borderColor = '#39ff14';
+            this.style.boxShadow = '0 25px 60px rgba(255, 255, 0, 0.4), 0 0 120px rgba(57, 255, 20, 0.3)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'skew(-2deg) scale(1.05) translateY(-10px)';
+            this.style.borderColor = '#ffff00';
+            this.style.boxShadow = '0 20px 50px rgba(255, 255, 0, 0.3), 0 0 100px rgba(57, 255, 20, 0.2)';
+        });
+    });
+
+    // Add explosive button effects
+    const buttons = document.querySelectorAll('.primary-btn, .secondary-btn, .sport-button, .cta-button');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.animation = 'none';
+            this.style.transform = this.style.transform.replace('scale(1)', 'scale(1.15)');
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = this.style.transform.replace('scale(1.15)', 'scale(1)');
+        });
+
+        button.addEventListener('click', function(e) {
+            // Create explosion effect on click
+            const rect = this.getBoundingClientRect();
+            const explosion = document.createElement('div');
+            explosion.style.position = 'fixed';
+            explosion.style.left = rect.left + rect.width/2 + 'px';
+            explosion.style.top = rect.top + rect.height/2 + 'px';
+            explosion.style.width = '4px';
+            explosion.style.height = '4px';
+            explosion.style.background = '#ffff00';
+            explosion.style.borderRadius = '50%';
+            explosion.style.pointerEvents = 'none';
+            explosion.style.zIndex = '10000';
+            explosion.style.boxShadow = '0 0 20px #ffff00';
+            document.body.appendChild(explosion);
+
+            explosion.animate([
+                { transform: 'scale(1)', opacity: 1 },
+                { transform: 'scale(20)', opacity: 0 }
+            ], {
+                duration: 600,
+                easing: 'ease-out'
+            }).onfinish = () => explosion.remove();
+        });
+    });
+
+    // Add random lightning effects
+    function createLightning() {
+        const lightning = document.createElement('div');
+        lightning.className = 'lightning';
+        lightning.style.left = Math.random() * 100 + '%';
+        lightning.style.top = Math.random() * 100 + 'vh';
+        document.body.appendChild(lightning);
+        
+        setTimeout(() => lightning.remove(), 3000);
+    }
+
+    // Create lightning periodically
+    setInterval(createLightning, 5000 + Math.random() * 10000);
+
+    // Add cursor trail effect
+    let trail = [];
+    document.addEventListener('mousemove', function(e) {
+        trail.push({x: e.clientX, y: e.clientY, time: Date.now()});
+        
+        // Limit trail length
+        trail = trail.filter(point => Date.now() - point.time < 200);
+        
+        // Create spark effect occasionally
+        if (Math.random() < 0.1) {
+            const spark = document.createElement('div');
+            spark.style.position = 'fixed';
+            spark.style.left = e.clientX + 'px';
+            spark.style.top = e.clientY + 'px';
+            spark.style.width = '2px';
+            spark.style.height = '2px';
+            spark.style.background = '#ffff00';
+            spark.style.pointerEvents = 'none';
+            spark.style.zIndex = '9999';
+            spark.style.borderRadius = '50%';
+            spark.style.boxShadow = '0 0 5px #ffff00';
+            document.body.appendChild(spark);
+            
+            spark.animate([
+                { opacity: 1, transform: 'scale(1)' },
+                { opacity: 0, transform: 'scale(3)' }
+            ], {
+                duration: 300,
+                easing: 'ease-out'
+            }).onfinish = () => spark.remove();
+        }
+    });
+
+    // Add screen shake effect for intense moments
+    function screenShake() {
+        document.body.style.animation = 'shake 0.5s ease-in-out';
+        setTimeout(() => {
+            document.body.style.animation = '';
+        }, 500);
+    }
+
+    // Add shake keyframes
+    const shakeKeyframes = `
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+            20%, 40%, 60%, 80% { transform: translateX(2px); }
+        }
+    `;
+    const style = document.createElement('style');
+    style.textContent = shakeKeyframes;
+    document.head.appendChild(style);
+
+    // Trigger screen shake on logo hover
+    document.querySelector('.logo').addEventListener('mouseenter', screenShake);
+});
+</script>
+</body>
+</html>UNISPORT ARENA</h4>
+        <p>UNLEASHING UNIVERSITY SPORTS LIKE NEVER BEFORE. JOIN THE REVOLUTION AND BECOME LEGENDARY.</p>
+    </div>
+    <div class="footer-section">
+        <h4>
