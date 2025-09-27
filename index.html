@@ -166,10 +166,56 @@ nav {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: 
-        linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="scratch" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0,10 Q5,0 10,10 T20,10" stroke="%23ffff00" stroke-width="0.5" fill="none" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23scratch)"/></svg>');
     overflow: hidden;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slider-image.active {
+    opacity: 0.6;
+}
+
+.hero-slider-image:nth-child(1) {
+    background-image: url('images/cricket.jpg');
+}
+
+.hero-slider-image:nth-child(2) {
+    background-image: url('images/chess.jpg');
+}
+
+.hero-slider-image:nth-child(3) {
+    background-image: url('images/basketball.jpg');
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+    z-index: -1;
 }
 
 .hero::before {
@@ -748,6 +794,11 @@ footer {
 
 <!-- Hero Section -->
 <section class="hero" id="home">
+<div class="hero-slider">
+    <div class="hero-slider-image active"></div>
+    <div class="hero-slider-image"></div>
+    <div class="hero-slider-image"></div>
+</div>
 <div class="hero-effects">
     <div class="scratch-effect scratch-1"></div>
     <div class="scratch-effect scratch-2"></div>
@@ -884,6 +935,21 @@ footer {
 <script>
 // Add aggressive scrolling and explosive interactive effects
 document.addEventListener('DOMContentLoaded', function() {
+    // Hero Image Slider
+    const sliderImages = document.querySelectorAll('.hero-slider-image');
+    let currentImageIndex = 0;
+
+    function rotateImages() {
+        sliderImages.forEach(img => img.classList.remove('active'));
+        currentImageIndex = (currentImageIndex + 1) % sliderImages.length;
+        sliderImages[currentImageIndex].classList.add('active');
+    }
+
+    // Set initial image
+    sliderImages[0].classList.add('active');
+    
+    // Rotate images every 2 seconds
+    setInterval(rotateImages, 2000);
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
