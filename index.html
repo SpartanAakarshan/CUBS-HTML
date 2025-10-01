@@ -161,7 +161,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -663,6 +663,290 @@ nav {
     letter-spacing: 1px;
 }
 
+/* About Section */
+.about {
+    padding: 10rem 3rem;
+    background: 
+        linear-gradient(135deg, #000000 0%, #0a0a00 50%, #000000 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="revolution" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="%23ffff00" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23revolution)"/></svg>');
+    position: relative;
+}
+
+.about-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-intro {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.about-subtitle {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+    color: #FFD700;
+    text-shadow: 
+        0 0 20px #FFD700,
+        0 0 40px #FFA500,
+        4px 4px 0 #000000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.about-text {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-weight: 600;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vision-mission {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    margin-bottom: 6rem;
+}
+
+.vision, .mission {
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,165,0,0.05) 100%);
+    border: 2px solid #FFD700;
+    transform: skew(-2deg);
+    transition: all 0.3s ease;
+}
+
+.vision:hover, .mission:hover {
+    transform: skew(-2deg) scale(1.02);
+    box-shadow: 0 20px 50px rgba(255, 215, 0, 0.3);
+}
+
+.subsection-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subsection-text {
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    font-weight: 600;
+}
+
+.mission-tagline {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #FFD700;
+    text-shadow: 0 0 20px #FFD700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mission-subtitle {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.three-cs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.c-item {
+    padding: 2rem;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #FFD700;
+    transition: all 0.3s ease;
+}
+
+.c-item:hover {
+    background: rgba(255,215,0,0.1);
+    transform: translateY(-5px);
+}
+
+.c-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #FFD700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.c-description {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.impact {
+    margin-bottom: 6rem;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.impact-section {
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,165,0,0.05) 100%);
+    border: 2px solid #FFD700;
+    transform: skew(-1deg);
+    transition: all 0.3s ease;
+}
+
+.impact-section:hover {
+    transform: skew(-1deg) scale(1.03);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+}
+
+.impact-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #FFD700;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.impact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.impact-list li {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.impact-list li::before {
+    content: '⚡';
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px #FFD700;
+}
+
+.why-exist {
+    margin-bottom: 6rem;
+    text-align: center;
+}
+
+.why-statements {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.why-statement {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    padding: 2rem;
+    background: rgba(255,215,0,0.1);
+    border: 2px solid #FFD700;
+    transform: skew(-1deg);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.why-statement:hover {
+    background: rgba(255,215,0,0.2);
+    transform: skew(-1deg) scale(1.02);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.join-movement {
+    text-align: center;
+    padding: 4rem;
+    background: linear-gradient(135deg, rgba(255,215,0,0.2) 0%, rgba(255,165,0,0.1) 100%);
+    border: 3px solid #FFD700;
+    transform: skew(-2deg);
+}
+
+.movement-text {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.movement-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.movement-btn {
+    padding: 1.5rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-movement-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000000;
+    transform: skew(-10deg);
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+}
+
+.primary-movement-btn:hover {
+    transform: skew(-10deg) scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.8);
+}
+
+.secondary-movement-btn {
+    background: transparent;
+    color: #FFD700;
+    border: 3px solid #FFD700;
+    transform: skew(-10deg);
+}
+
+.secondary-movement-btn:hover {
+    background: #FFD700;
+    color: #000000;
+    transform: skew(-10deg) scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+}
+
 /* Footer */
 footer {
     background: #000000;
@@ -779,6 +1063,53 @@ footer {
     .footer {
         padding: 4rem 1.5rem 2rem;
     }
+
+    /* About Section Responsive */
+    .about {
+        padding: 6rem 1.5rem;
+    }
+
+    .about-subtitle {
+        font-size: 2.5rem;
+    }
+
+    .about-text {
+        font-size: 1.2rem;
+    }
+
+    .vision-mission {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .subsection-title {
+        font-size: 2.5rem;
+    }
+
+    .mission-tagline {
+        font-size: 2rem;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .why-statement {
+        font-size: 1.4rem;
+    }
+
+    .movement-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movement-btn {
+        padding: 1.2rem 2rem;
+        font-size: 1.1rem;
+        width: 100%;
+        max-width: 300px;
+    }
 }
 </style>
 </head>
@@ -819,7 +1150,7 @@ footer {
 
 <div class="hero-content">
     <h1 class="hero-title">From Campus to Glory</h1>
-    <p class="hero-subtitle">COMPETE • CONQUER • CONNECT>
+    <p class="hero-subtitle">COMPETE • CONQUER • CONNECT</p>
     
     <div class="hero-buttons">
         <button class="primary-btn">ENTER THE ARENA</button>
@@ -888,6 +1219,107 @@ footer {
         </div>
     </div>
 </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="about-content">
+        <h2 class="section-title">ABOUT US</h2>
+        
+        <div class="about-intro">
+            <h3 class="about-subtitle">We're Not Just Building Games. We're Building a Movement.</h3>
+            <p class="about-text">
+                India has the talent. India has the numbers. But for decades, our athletes have been stuck in a broken system—no pathways, no recognition, no culture of sports on campus. CUBS exists to change that.
+            </p>
+            <p class="about-text">
+                We're here to flip the script and turn Indian colleges into launchpads for champions, creators, and communities. Think NCAA-level culture, but built for India, powered by Gen Z.
+            </p>
+        </div>
+
+        <div class="vision-mission">
+            <div class="vision">
+                <h3 class="subsection-title">Our Vision</h3>
+                <p class="subsection-text">
+                    To ignite a college sports revolution that makes India a global sporting powerhouse—where student-athletes rise, fans rally, and campuses transform into arenas of pride and possibility.
+                </p>
+            </div>
+            
+            <div class="mission">
+                <h3 class="subsection-title">Our Mission</h3>
+                <p class="mission-tagline">Competition. Community. Content.</p>
+                <p class="mission-subtitle">The 3 C's power everything we do:</p>
+                
+                <div class="three-cs">
+                    <div class="c-item">
+                        <h4 class="c-title">Competition</h4>
+                        <p class="c-description">Structured, digitized, upgraded tournaments that put athletes on a clear path to the elite.</p>
+                    </div>
+                    <div class="c-item">
+                        <h4 class="c-title">Community</h4>
+                        <p class="c-description">Fan clubs, inclusive sports, workshops, and the energy of 40M+ students coming alive.</p>
+                    </div>
+                    <div class="c-item">
+                        <h4 class="c-title">Content</h4>
+                        <p class="c-description">Storytelling, broadcasting, and recognition that turns players into legends.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="impact">
+            <h3 class="subsection-title">The Impact We Create</h3>
+            
+            <div class="impact-grid">
+                <div class="impact-section">
+                    <h4 class="impact-title">On Students</h4>
+                    <ul class="impact-list">
+                        <li>A stage to showcase talent and leadership.</li>
+                        <li>Scholarships, internships, and career pathways.</li>
+                        <li>Fitness, skills, and lifelong networks.</li>
+                    </ul>
+                </div>
+                
+                <div class="impact-section">
+                    <h4 class="impact-title">On Colleges</h4>
+                    <ul class="impact-list">
+                        <li>Elevated campus culture that attracts students.</li>
+                        <li>New revenue streams through sports and fan engagement.</li>
+                        <li>Stronger alumni and industry connections.</li>
+                    </ul>
+                </div>
+                
+                <div class="impact-section">
+                    <h4 class="impact-title">On India</h4>
+                    <ul class="impact-list">
+                        <li>A grassroots-to-elite talent pipeline.</li>
+                        <li>Job creation and sports-driven economy.</li>
+                        <li>Revived sporting culture with India competing at the highest levels.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="why-exist">
+            <h3 class="subsection-title">Why We Exist</h3>
+            <div class="why-statements">
+                <p class="why-statement">Because 17% of the world's people shouldn't settle for 0.5% of the medals.</p>
+                <p class="why-statement">Because college shouldn't just be about degrees—it should be about destiny.</p>
+                <p class="why-statement">Because this generation is ready for more.</p>
+            </div>
+        </div>
+
+        <div class="join-movement">
+            <h3 class="subsection-title">Join the Movement</h3>
+            <p class="movement-text">
+                We're not waiting for change. We're building it. Whether you're a student, an athlete, a college, or a brand—CUBS is your arena.
+            </p>
+            <div class="movement-buttons">
+                <button class="movement-btn primary-movement-btn">Get Involved</button>
+                <button class="movement-btn secondary-movement-btn">Partner With Us</button>
+                <button class="movement-btn secondary-movement-btn">Support the Revolution</button>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Stats Section -->
